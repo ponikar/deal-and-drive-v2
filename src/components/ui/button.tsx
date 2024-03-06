@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 import { cn } from "@/lib/utils";
 
@@ -53,7 +54,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         className={cn(
           buttonVariants({
             variant,
-            size: isLoading ? "icon" : size,
+            size: size,
             className,
           })
         )}
@@ -61,7 +62,14 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         disabled={isLoading ? true : props.disabled}
         {...props}
       >
-        {!isLoading ? props.children : "Loading"}
+        {!isLoading ? (
+          props.children
+        ) : (
+          <AiOutlineLoading3Quarters
+            size={20}
+            className="text-white animate-spin"
+          />
+        )}
       </Comp>
     );
   }

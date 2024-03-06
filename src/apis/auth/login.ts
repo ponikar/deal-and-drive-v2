@@ -9,7 +9,8 @@ type Body = {
 export const useLogin = () => {
   return useMutation({
     mutationFn: async (data: Body) => {
-      return NetworkAPI.post("/login", data, {
+      return NetworkAPI.get("/login", {
+        data,
         headers: {
           "Content-Type": "application/json",
         },

@@ -33,13 +33,13 @@ interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
-    // defaultValues: {
-    //   name: "Darshan Ponikar",
-    //   email: "itspossnikar@gmail.com",
-    //   phone: "7602137148",
-    //   password: "Darshan@1234",
-    //   confirmPassword: "Darshan@1234",
-    // },
+    defaultValues: {
+      name: "Darshan Ponikar",
+      email: "itspossnikar@gmail.com",
+      phone: "7602137148",
+      password: "Darshan@1234",
+      confirmPassword: "Darshan@1234",
+    },
   });
 
   const { mutateAsync, isPending } = useSignup();
