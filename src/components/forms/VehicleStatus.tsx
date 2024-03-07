@@ -9,20 +9,23 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { FormControl } from "../ui/form";
 
-export function VehicleStatus() {
+export const VehicleStatus = React.forwardRef<unknown, any>((props, ref) => {
   return (
-    <Select>
-      <SelectTrigger className="w-full">
-        <SelectValue placeholder="New/Old" />
-      </SelectTrigger>
+    <Select onValueChange={props.onChange} defaultValue={props.value}>
+      <FormControl>
+        <SelectTrigger className="w-full">
+          <SelectValue placeholder="New/Old" />
+        </SelectTrigger>
+      </FormControl>
       <SelectContent>
         <SelectGroup>
           <SelectLabel>Vehicle Type</SelectLabel>
           <SelectItem value="new">New</SelectItem>
-          <SelectItem value="old">old</SelectItem>
+          <SelectItem value="old">Old</SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>
   );
-}
+});
