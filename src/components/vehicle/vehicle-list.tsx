@@ -8,6 +8,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { TableFilters } from "../ui/table-filters";
 
 const invoices = [
   {
@@ -56,35 +57,33 @@ const invoices = [
 
 export function VehicleList() {
   return (
-    <div className="space-y-4 p-8 pt-6">
+    <div className="">
+      <TableFilters />
       <Table>
-        <TableCaption>A list of your recent invoices.</TableCaption>
         <TableHeader>
           <TableRow>
-            <TableHead className="w-[100px]">Invoice</TableHead>
+            <TableHead>Registration ID</TableHead>
+            <TableHead>Chassis ID</TableHead>
+            <TableHead>Engine ID</TableHead>
+            <TableHead>Manufacturing Year</TableHead>
+            <TableHead>Cost Price</TableHead>
             <TableHead>Status</TableHead>
-            <TableHead>Method</TableHead>
-            <TableHead className="text-right">Amount</TableHead>
+            <TableHead>Stock Entry Date</TableHead>
+            <TableHead>Location</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
-          {invoices.map((invoice) => (
-            <TableRow key={invoice.invoice}>
-              <TableCell className="font-medium">{invoice.invoice}</TableCell>
-              <TableCell>{invoice.paymentStatus}</TableCell>
-              <TableCell>{invoice.paymentMethod}</TableCell>
-              <TableCell className="text-right">
-                {invoice.totalAmount}
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-        <TableFooter>
           <TableRow>
-            <TableCell colSpan={3}>Total</TableCell>
-            <TableCell className="text-right">$2,500.00</TableCell>
+            <TableCell className="font-medium">1</TableCell>
+            <TableCell>SV300169266</TableCell>
+            <TableCell>ID235223344</TableCell>
+            <TableCell className="">2003</TableCell>
+            <TableCell className="">23,000</TableCell>
+            <TableCell className="uppercase">NEW</TableCell>
+            <TableCell>{new Date().toDateString()}</TableCell>
+            <TableCell>Indore, Madhya Pradesh</TableCell>
           </TableRow>
-        </TableFooter>
+        </TableBody>
       </Table>
     </div>
   );

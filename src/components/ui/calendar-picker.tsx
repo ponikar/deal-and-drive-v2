@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/popover";
 
 interface Props {
-  value?: string;
+  value?: Date;
   onSelect?: (val: any) => void;
 }
 
