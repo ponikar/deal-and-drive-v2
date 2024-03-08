@@ -83,6 +83,26 @@ export function VehicleList() {
             <TableCell>{new Date().toDateString()}</TableCell>
             <TableCell>Indore, Madhya Pradesh</TableCell>
           </TableRow>
+          <TableRow>
+            <TableCell className="font-medium">1</TableCell>
+            <TableCell>SV300169266</TableCell>
+            <TableCell>ID235223344</TableCell>
+            <TableCell className="">2003</TableCell>
+            <TableCell className="">23,000</TableCell>
+            <TableCell className="uppercase">NEW</TableCell>
+            <TableCell>{new Date().toDateString()}</TableCell>
+            <TableCell>Indore, Madhya Pradesh</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className="font-medium">1</TableCell>
+            <TableCell>SV300169266</TableCell>
+            <TableCell>ID235223344</TableCell>
+            <TableCell className="">2003</TableCell>
+            <TableCell className="">23,000</TableCell>
+            <TableCell className="uppercase">NEW</TableCell>
+            <TableCell>{new Date().toDateString()}</TableCell>
+            <TableCell>Indore, Madhya Pradesh</TableCell>
+          </TableRow>
         </TableBody>
       </Table>
     </div>
