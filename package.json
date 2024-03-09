@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "git:sync": "git push origin main && git push mine main"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
